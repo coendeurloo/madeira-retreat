@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    /* Luxe warm stone palette */
+    --background: 40 15% 96%;       /* warm cream #F6F5F2 */
+    --foreground: 25 8% 16%;        /* deep stone #292524 */
+    --card: 0 0% 100%;              /* white */
+    --card-foreground: 25 8% 16%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 8% 16%;
+    --primary: 25 60% 42%;          /* warm terracotta #AB6633 - CTA */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 15% 96%;        /* warm cream */
+    --secondary-foreground: 25 8% 16%;
+    --muted: 40 8% 90%;             /* stone-200 */
+    --muted-foreground: 25 5% 40%;  /* stone-500 */
+    --accent: 38 45% 50%;           /* muted gold #B8923A - icons/decorative */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 8% 88%;            /* warm stone border */
+    --input: 30 8% 88%;
+    --ring: 25 60% 42%;
+    --radius: 0.125rem;             /* rounded-sm */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
