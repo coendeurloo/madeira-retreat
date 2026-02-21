@@ -7,7 +7,7 @@ export function ConceptQuote() {
 
   return (
     <section className="container mx-auto px-6 max-w-4xl">
-      <div className="space-y-8 text-center">
+      <div className="space-y-8 text-center reveal-on-scroll">
         <div className="w-px h-16 bg-primary/40 mx-auto" />
         <p className="text-2xl md:text-3xl font-serif text-foreground leading-relaxed tracking-tight">
           {t.concept.line1}

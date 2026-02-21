@@ -10,7 +10,7 @@ export function Hosts() {
     <section className="container mx-auto px-6 max-w-5xl">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Host */}
-        <div>
+        <div className="reveal-on-scroll">
           <h3 className="font-serif text-3xl font-medium tracking-tight mb-6">
             {t.hosts.title}
           </h3>
@@ -30,7 +30,7 @@ export function Hosts() {
         </div>
 
         {/* Visual work */}
-        <div>
+        <div className="reveal-on-scroll reveal-delay-100">
           <h3 className="font-serif text-3xl font-medium tracking-tight mb-6">
             {t.hosts.visualTitle}
           </h3>

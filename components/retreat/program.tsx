@@ -2,12 +2,14 @@
 
 import { useLanguage } from "@/lib/language-context"
 
+const revealDelays = ["", "reveal-delay-100", "reveal-delay-200", "reveal-delay-300", "reveal-delay-400"]
+
 export function Program() {
   const { t } = useLanguage()
 
   return (
     <section className="container mx-auto px-6 max-w-3xl">
-      <div className="text-center mb-16">
+      <div className="text-center mb-16 reveal-on-scroll">
         <h2 className="font-serif text-4xl md:text-5xl font-medium tracking-tight mb-4">
           {t.program.title}
         </h2>
@@ -17,7 +19,10 @@ export function Program() {
         {t.program.days.map((day, i) => {
           const isFirstOrLast = i === 0 || i === t.program.days.length - 1
           return (
-            <div key={i} className="relative pl-8 md:pl-12">
+            <div
+              key={i}
+              className={`relative pl-8 md:pl-12 reveal-on-scroll ${revealDelays[i % revealDelays.length]}`}
+            >
               <div
                 className={`absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full shadow-[0_0_0_8px_hsl(var(--background))] ${
                   isFirstOrLast ? "bg-primary" : "bg-muted-foreground/50"
@@ -41,7 +46,7 @@ export function Program() {
         })}
       </div>
 
-      <div className="mt-16 text-center">
+      <div className="mt-16 text-center reveal-on-scroll reveal-delay-200">
         <p className="text-xl font-medium text-foreground mb-6 font-serif italic">
           {t.program.ctaIntro}
         </p>

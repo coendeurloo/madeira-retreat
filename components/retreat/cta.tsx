@@ -7,7 +7,7 @@ export function FinalCTA() {
 
   return (
     <section id="application" className="container mx-auto px-6 max-w-4xl pb-20 pt-10">
-      <div className="bg-foreground text-white rounded-sm p-12 md:p-16 text-center shadow-2xl relative overflow-hidden">
+      <div className="bg-foreground text-white rounded-sm p-12 md:p-16 text-center shadow-2xl relative overflow-hidden reveal-on-scroll">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(25_8%_20%),_hsl(25_8%_12%),_hsl(25_8%_10%))] z-0" />
 
         <div className="relative z-10 space-y-8">

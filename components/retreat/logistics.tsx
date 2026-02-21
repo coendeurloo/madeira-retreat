@@ -8,7 +8,7 @@ export function Logistics() {
 
   return (
     <section className="container mx-auto px-6 max-w-5xl">
-      <div className="mb-12 text-center">
+      <div className="mb-12 text-center reveal-on-scroll">
         <h2 className="font-serif text-4xl font-medium tracking-tight mb-4">
           {t.logistics.title}
         </h2>
@@ -16,7 +16,7 @@ export function Logistics() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Left: Info cards */}
-        <div className="lg:col-span-5 space-y-6">
+        <div className="lg:col-span-5 space-y-6 reveal-on-scroll">
           <div className="bg-card p-6 border border-border rounded-sm shadow-sm flex items-start gap-4">
             <Calendar className="w-6 h-6 text-accent shrink-0" strokeWidth={1.5} />
             <div>
@@ -45,7 +45,7 @@ export function Logistics() {
         </div>
 
         {/* Right: Pricing card */}
-        <div className="lg:col-span-7 bg-card p-8 md:p-10 border border-border rounded-sm shadow-sm">
+        <div className="lg:col-span-7 bg-card p-8 md:p-10 border border-border rounded-sm shadow-sm reveal-on-scroll reveal-delay-100">
           <div className="flex flex-col md:flex-row gap-8 mb-10 pb-10 border-b border-border">
             <div className="flex-1">
               <h4 className="font-medium text-foreground mb-4 flex items-center gap-2">
@@ -113,7 +113,7 @@ export function Logistics() {
       </div>
 
       {/* CTA after pricing */}
-      <div className="mt-12 text-center space-y-4">
+      <div className="mt-12 text-center space-y-4 reveal-on-scroll reveal-delay-200">
         <p className="text-lg font-serif font-medium text-foreground">{t.logistics.spots}</p>
         <a
           href="#application"
@@ -127,7 +127,7 @@ export function Logistics() {
       </div>
 
       {/* B2B */}
-      <div className="mt-10 text-center bg-background p-6 rounded-sm border border-border">
+      <div className="mt-10 text-center bg-background p-6 rounded-sm border border-border reveal-on-scroll reveal-delay-300">
         <p className="text-sm font-light text-muted-foreground">
           <strong className="font-medium text-foreground">B2B: </strong>
           {t.logistics.b2b}

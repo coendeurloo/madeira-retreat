@@ -6,6 +6,7 @@ const images = [
   { src: "/images/ocean-cliffs.jpg", alt: "Ocean cliffs" },
   { src: "/images/madeira-sunrise.jpg", alt: "Madeira sunrise" },
 ]
+const revealDelays = ["", "reveal-delay-100", "reveal-delay-200", "reveal-delay-300"]
 
 export function Gallery() {
   return (
@@ -15,7 +16,9 @@ export function Gallery() {
           {images.map((img, i) => (
             <div
               key={i}
-              className={`relative group overflow-hidden h-64 md:h-80 rounded-sm ${i % 2 !== 0 ? "md:mt-12" : ""}`}
+              className={`relative group overflow-hidden h-64 md:h-80 rounded-sm reveal-on-scroll ${
+                revealDelays[i % revealDelays.length]
+              } ${i % 2 !== 0 ? "md:mt-12" : ""}`}
             >
               <Image
                 src={img.src}

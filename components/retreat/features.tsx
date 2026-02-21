@@ -4,13 +4,14 @@ import { Lightbulb, ShieldAlert, Target, Users, ChefHat, Camera, Compass } from 
 import { useLanguage } from "@/lib/language-context"
 
 const icons = [Lightbulb, ShieldAlert, Target, Users, ChefHat, Camera, Compass]
+const revealDelays = ["", "reveal-delay-100", "reveal-delay-200"]
 
 export function Features() {
   const { t } = useLanguage()
 
   return (
     <section className="container mx-auto px-6 max-w-6xl">
-      <div className="mb-16 text-center">
+      <div className="mb-16 text-center reveal-on-scroll">
         <h2 className="font-serif text-4xl md:text-5xl font-medium tracking-tight">
           {t.features.title}
         </h2>
@@ -22,9 +23,9 @@ export function Features() {
           return (
             <div
               key={i}
-              className={`bg-card p-8 border border-border shadow-sm rounded-sm hover:-translate-y-1 transition-transform duration-300 ${
-                i === 6 ? "md:col-start-1 lg:col-start-2" : ""
-              }`}
+              className={`bg-card p-8 border border-border shadow-sm rounded-sm hover:-translate-y-1 transition-transform duration-300 reveal-on-scroll ${
+                revealDelays[i % revealDelays.length]
+              } ${i === 6 ? "md:col-start-1 lg:col-start-2" : ""}`}
             >
               <Icon className="w-9 h-9 text-accent mb-6" strokeWidth={1.5} />
               <p className="text-lg font-light text-muted-foreground leading-relaxed">

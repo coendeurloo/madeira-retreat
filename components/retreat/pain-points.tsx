@@ -7,7 +7,7 @@ export function PainPoints() {
 
   return (
     <section className="container mx-auto px-6 max-w-4xl">
-      <div className="bg-card border border-border shadow-sm p-10 md:p-16 rounded-sm">
+      <div className="bg-card border border-border shadow-sm p-10 md:p-16 rounded-sm reveal-on-scroll">
         <h2 className="font-serif text-3xl md:text-4xl font-medium tracking-tight text-center mb-10">
           {t.pain.title}
         </h2>
