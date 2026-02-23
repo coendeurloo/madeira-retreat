@@ -55,7 +55,7 @@ export function FinalCTA() {
             <form onSubmit={onSubmit} className="w-full max-w-2xl space-y-4 text-left">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label htmlFor="application-name" className="text-sm text-white/80">
+                  <label htmlFor="application-name" className="block text-sm text-white/80 text-center">
                     {t.finalCta.form.nameLabel}
                   </label>
                   <Input
@@ -70,7 +70,7 @@ export function FinalCTA() {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="application-phone" className="text-sm text-white/80">
+                  <label htmlFor="application-phone" className="block text-sm text-white/80 text-center">
                     {t.finalCta.form.phoneLabel}
                   </label>
                   <Input
@@ -86,7 +86,7 @@ export function FinalCTA() {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="application-email" className="text-sm text-white/80">
+                <label htmlFor="application-email" className="block text-sm text-white/80 text-center">
                   {t.finalCta.form.emailLabel}
                 </label>
                 <Input
@@ -100,17 +100,19 @@ export function FinalCTA() {
                 />
               </div>
 
-              <Button
-                type="submit"
-                disabled={status === "submitting"}
-                className="w-full md:w-auto px-10 py-5 h-auto bg-primary text-primary-foreground rounded-full hover:opacity-90 transition-all shadow-lg text-lg font-medium tracking-wide"
-              >
-                {status === "submitting" ? t.finalCta.form.submitting : t.finalCta.button}
-              </Button>
+              <div className="flex justify-center">
+                <Button
+                  type="submit"
+                  disabled={status === "submitting"}
+                  className="w-full md:w-auto px-10 py-5 h-auto bg-primary text-primary-foreground rounded-full hover:opacity-90 transition-all shadow-lg text-lg font-medium tracking-wide"
+                >
+                  {status === "submitting" ? t.finalCta.form.submitting : t.finalCta.button}
+                </Button>
+              </div>
 
               {message ? (
                 <p
-                  className={`text-sm ${
+                  className={`text-sm text-center ${
                     status === "success" ? "text-emerald-200" : "text-red-200"
                   }`}
                 >
