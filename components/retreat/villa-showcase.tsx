@@ -101,7 +101,7 @@ const villaPhotos: VillaPhoto[] = [
   },
 ]
 
-const heroPhotoSrc = "/images/villa/nbd_a66eab6d-306e-4101-a63b-dd070afd2477.webp"
+const heroPhotoSrc = "/images/villa/nbd_6ab5d632-8bd4-4d13-ae74-2757f11942da.jpeg"
 const revealDelays = ["", "reveal-delay-100", "reveal-delay-200", "reveal-delay-300"]
 
 export function VillaShowcase() {
