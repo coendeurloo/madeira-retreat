@@ -39,7 +39,7 @@ export function DecisionPrompt() {
 
       <div className="mt-10 text-center reveal-on-scroll reveal-delay-200">
         <div className="w-px h-14 bg-primary/35 mx-auto" />
-        <p className="my-8 text-lg md:text-2xl font-serif text-foreground leading-relaxed whitespace-pre-line max-w-3xl mx-auto text-balance">
+        <p className="my-8 text-lg md:text-2xl font-serif text-foreground leading-[1.45] whitespace-pre-line max-w-[34ch] mx-auto text-balance">
           {t.decisionPrompt.transition}
         </p>
         <div className="w-px h-14 bg-primary/35 mx-auto" />
