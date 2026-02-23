@@ -16,92 +16,106 @@ type VillaPhoto = {
 
 const villaPhotos: VillaPhoto[] = [
   {
-    src: "/images/villa/nbd_6ea80cb5-430e-4d09-86b0-96483caf08ce.webp",
+    src: "/images/villa/main picture of villa.jpeg",
+    alt: {
+      ru: "Главный вид на виллу с бассейном",
+      en: "Main view of the villa with the pool",
+    },
+  },
+  {
+    src: "/images/villa/villa-top.jpg",
     alt: {
       ru: "Вид сверху на виллу, сад, бассейн и океан",
       en: "Aerial view of the villa, garden, pool, and ocean",
     },
   },
   {
-    src: "/images/villa/nbd_0c49fa4a-03ef-41fe-a5f6-ddfa246d3701.jpeg",
+    src: "/images/villa/pool-atlantic.jpg",
     alt: {
-      ru: "Джакузи с видом на Атлантику",
-      en: "Jacuzzi with Atlantic Ocean view",
+      ru: "Бассейн с видом на Атлантику",
+      en: "Pool with an Atlantic Ocean view",
     },
   },
   {
-    src: "/images/villa/nbd_6ab5d632-8bd4-4d13-ae74-2757f11942da.jpeg",
+    src: "/images/villa/swimming pool.jpeg",
     alt: {
-      ru: "Терраса с обеденной зоной и бассейном",
-      en: "Terrace dining area by the pool",
+      ru: "Зона бассейна у виллы",
+      en: "Pool area by the villa",
     },
   },
   {
-    src: "/images/villa/nbd_4447df9e-7d77-4292-a397-48a6ee21fcfc.webp",
+    src: "/images/villa/terrace.webp",
     alt: {
-      ru: "Сад и бассейн с панорамным видом на море",
-      en: "Garden and pool with panoramic sea view",
+      ru: "Терраса для ужинов и отдыха",
+      en: "Terrace for dinners and relaxation",
     },
   },
   {
-    src: "/images/villa/nbd_a66eab6d-306e-4101-a63b-dd070afd2477.webp",
+    src: "/images/villa/garden.jpg",
     alt: {
-      ru: "Фасад виллы и бассейн",
-      en: "Villa facade and swimming pool",
+      ru: "Сад и зелёная территория виллы",
+      en: "Garden and green villa grounds",
     },
   },
   {
-    src: "/images/villa/nbd_e3f1bfde-fd70-4b86-9156-2d1a85ec9ec8.webp",
+    src: "/images/villa/mountain view.jpeg",
     alt: {
-      ru: "Зона отдыха у бассейна и джакузи",
-      en: "Relaxation area by the pool and jacuzzi",
+      ru: "Вид на склон и территорию виллы",
+      en: "View of the hillside and villa grounds",
     },
   },
   {
-    src: "/images/villa/nbd_41a7f67c-4457-4958-9718-f8f4c37b55df.jpeg",
+    src: "/images/villa/hall.webp",
     alt: {
-      ru: "Бассейн и джакузи рядом с домом",
-      en: "Pool and jacuzzi next to the house",
+      ru: "Общая зона / холл",
+      en: "Common area / hall",
     },
   },
   {
-    src: "/images/villa/nbd_4c3ae76d-b27d-4608-9151-8839e4c36f55.jpeg",
+    src: "/images/villa/kitchen.webp",
     alt: {
-      ru: "Джакузи и бассейн на фоне океана",
-      en: "Jacuzzi and pool overlooking the ocean",
+      ru: "Кухня",
+      en: "Kitchen",
     },
   },
   {
-    src: "/images/villa/nbd_52fdadc0-bebc-4c16-adcc-11d9261a5b53.jpeg",
+    src: "/images/villa/living room.webp",
     alt: {
-      ru: "Лаунж-зона у бассейна",
-      en: "Poolside lounge area",
+      ru: "Гостиная",
+      en: "Living room",
     },
   },
   {
-    src: "/images/villa/nbd_8a885601-dc02-4331-88d8-7229e3a148fc.jpeg",
+    src: "/images/villa/bedroom-spacious.webp",
     alt: {
-      ru: "Панорамный вид на виллу и участок",
-      en: "Panoramic view of the villa and grounds",
+      ru: "Просторная спальня",
+      en: "Spacious bedroom",
     },
   },
   {
-    src: "/images/villa/nbd_9b3ada3a-d54c-4309-ab17-13c26ac96775.jpeg",
+    src: "/images/villa/bedroom twin.webp",
     alt: {
-      ru: "Зона отдыха у бассейна с видом на сад",
-      en: "Poolside chill area with garden view",
+      ru: "Twin-комната с двумя кроватями",
+      en: "Twin room with two beds",
     },
   },
   {
-    src: "/images/villa/nbd_9d4bc687-d792-438e-bb85-7695ad939ac6.jpeg",
+    src: "/images/villa/bedroom.webp",
     alt: {
-      ru: "Вид сверху на бассейн и океан",
-      en: "Top view of the pool and ocean",
+      ru: "Спальня",
+      en: "Bedroom",
+    },
+  },
+  {
+    src: "/images/villa/bathroom.webp",
+    alt: {
+      ru: "Ванная комната",
+      en: "Bathroom",
     },
   },
 ]
 
-const heroPhotoSrc = "/images/villa/nbd_6ab5d632-8bd4-4d13-ae74-2757f11942da.jpeg"
+const heroPhotoSrc = "/images/villa/main picture of villa.jpeg"
 const revealDelays = ["", "reveal-delay-100", "reveal-delay-200", "reveal-delay-300"]
 
 export function VillaShowcase() {
@@ -145,9 +159,12 @@ export function VillaShowcase() {
           <h2 className="font-serif text-4xl md:text-5xl font-medium tracking-tight text-foreground text-balance">
             {t.villa.title}
           </h2>
-          <p className="text-lg font-light text-muted-foreground leading-relaxed">
-            {t.villa.intro}
-          </p>
+          <div className="space-y-4 text-base md:text-lg font-light text-muted-foreground leading-relaxed">
+            {t.villa.paragraphs.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+            <p className="text-foreground font-medium">{t.villa.capacityLine}</p>
+          </div>
           <ul className="space-y-3 pt-1">
             {t.villa.highlights.map((item, i) => (
               <li
@@ -159,6 +176,9 @@ export function VillaShowcase() {
               </li>
             ))}
           </ul>
+          <p className="font-serif text-lg md:text-xl text-foreground pt-2">
+            {t.villa.closing}
+          </p>
         </div>
 
         <div className="lg:col-span-8 reveal-on-scroll">

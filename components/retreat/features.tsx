@@ -1,9 +1,9 @@
 "use client"
 
-import { Lightbulb, ShieldAlert, Target, Users, ChefHat, Camera, Compass } from "lucide-react"
+import { Lightbulb, Brain, Target, Users, ChefHat, Camera, Compass } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 
-const icons = [Lightbulb, ShieldAlert, Target, Users, ChefHat, Camera, Compass]
+const icons = [Lightbulb, Brain, Target, Users, ChefHat, Camera, Compass]
 const revealDelays = ["", "reveal-delay-100", "reveal-delay-200"]
 
 export function Features() {

@@ -101,6 +101,23 @@ export function Program() {
         })}
       </div>
 
+      <div className="mt-12 bg-card border border-border rounded-sm p-6 md:p-8 reveal-on-scroll reveal-delay-100">
+        <p className="text-lg md:text-xl font-serif text-foreground mb-5">
+          {t.program.additionsTitle}
+        </p>
+        <ul className="space-y-3 text-base md:text-lg font-light text-muted-foreground leading-relaxed">
+          {t.program.additions.map((item, index) => (
+            <li key={index}>
+              <span className="text-primary mr-2">—</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <p className="mt-6 font-serif text-xl md:text-2xl text-foreground">
+          {t.program.groupNote}
+        </p>
+      </div>
+
       <div className="mt-16 text-center reveal-on-scroll reveal-delay-200">
         <p className="text-xl font-medium text-foreground mb-6 font-serif italic">
           {t.program.ctaIntro}
@@ -111,9 +128,6 @@ export function Program() {
         >
           {t.program.cta}
         </a>
-        <p className="mt-3 text-xs font-light text-muted-foreground">
-          {t.program.ctaNote}
-        </p>
       </div>
     </section>
   )

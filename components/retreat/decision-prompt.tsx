@@ -1,0 +1,49 @@
+"use client"
+
+import { useLanguage } from "@/lib/language-context"
+
+export function DecisionPrompt() {
+  const { t } = useLanguage()
+
+  return (
+    <section className="container mx-auto px-6 max-w-4xl">
+      <div className="text-center reveal-on-scroll">
+        <div className="w-px h-14 bg-primary/35 mx-auto" />
+        <h2 className="my-8 font-serif text-2xl md:text-4xl font-medium tracking-tight leading-tight text-foreground mx-auto max-w-[24ch] text-balance">
+          {t.decisionPrompt.title}
+        </h2>
+        <div className="w-px h-14 bg-primary/35 mx-auto" />
+      </div>
+
+      <div className="mt-10 bg-card border border-border rounded-sm px-8 py-12 md:px-12 md:py-14 reveal-on-scroll reveal-delay-100">
+
+        <p className="text-lg md:text-xl font-medium text-foreground mb-6">
+          {t.decisionPrompt.listTitle}
+        </p>
+
+        <ul className="space-y-4 text-base md:text-lg font-light text-muted-foreground leading-relaxed">
+          {t.decisionPrompt.points.map((point, index) => (
+            <li key={index} className="flex items-start gap-3">
+              <span className="text-primary mt-0.5">—</span>
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-10 text-center pt-8">
+          <p className="text-xl md:text-2xl font-serif font-medium text-foreground italic mb-8">
+            {t.decisionPrompt.closing}
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-10 text-center reveal-on-scroll reveal-delay-200">
+        <div className="w-px h-14 bg-primary/35 mx-auto" />
+        <p className="my-8 text-lg md:text-2xl font-serif text-foreground leading-relaxed whitespace-pre-line max-w-3xl mx-auto text-balance">
+          {t.decisionPrompt.transition}
+        </p>
+        <div className="w-px h-14 bg-primary/35 mx-auto" />
+      </div>
+    </section>
+  )
+}

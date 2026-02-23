@@ -1,9 +1,42 @@
 "use client"
 
+import { useState } from "react"
 import { useLanguage } from "@/lib/language-context"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 
 export function FinalCTA() {
   const { t } = useLanguage()
+  const [form, setForm] = useState({ name: "", phone: "", email: "" })
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
+  const [message, setMessage] = useState("")
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    setStatus("submitting")
+    setMessage("")
+
+    try {
+      const response = await fetch("/api/application", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      })
+
+      const data = (await response.json()) as { ok?: boolean; message?: string }
+
+      if (!response.ok || !data.ok) {
+        throw new Error(data.message || t.finalCta.form.error)
+      }
+
+      setStatus("success")
+      setMessage(t.finalCta.form.success)
+      setForm({ name: "", phone: "", email: "" })
+    } catch (error) {
+      setStatus("error")
+      setMessage(error instanceof Error ? error.message : t.finalCta.form.error)
+    }
+  }
 
   return (
     <section id="application" className="container mx-auto px-6 max-w-4xl pb-20 pt-10">
@@ -11,23 +44,82 @@ export function FinalCTA() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(25_8%_20%),_hsl(25_8%_12%),_hsl(25_8%_10%))] z-0" />
 
         <div className="relative z-10 space-y-8">
-          <p className="text-xl font-light text-white/60">{t.finalCta.spots}</p>
+          <p className="text-2xl md:text-3xl font-serif text-white/80">{t.finalCta.spots}</p>
           <h2 className="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-tight">
             {t.finalCta.title}
             <br />
             {t.finalCta.titleLine2}
           </h2>
 
-          <div className="pt-6 flex flex-col items-center gap-4">
-            <a
-              href="https://wa.me/?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D1%83%20%D0%BD%D0%B0%20%D1%80%D0%B5%D1%82%D1%80%D0%B8%D1%82%20%D0%BD%D0%B0%20%D0%9C%D0%B0%D0%B4%D0%B5%D0%B9%D1%80%D0%B5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full md:w-auto px-10 py-5 bg-primary text-primary-foreground rounded-full hover:opacity-90 transition-all shadow-lg text-lg font-medium tracking-wide inline-block"
-            >
-              {t.finalCta.button}
-            </a>
-            <p className="text-sm font-light text-white/50 mt-2">
+          <div className="pt-4 flex flex-col items-center gap-4">
+            <form onSubmit={onSubmit} className="w-full max-w-2xl space-y-4 text-left">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <label htmlFor="application-name" className="text-sm text-white/80">
+                    {t.finalCta.form.nameLabel}
+                  </label>
+                  <Input
+                    id="application-name"
+                    type="text"
+                    required
+                    value={form.name}
+                    onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
+                    placeholder={t.finalCta.form.namePlaceholder}
+                    className="h-12 bg-white/95 border-white/20 text-foreground placeholder:text-muted-foreground"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="application-phone" className="text-sm text-white/80">
+                    {t.finalCta.form.phoneLabel}
+                  </label>
+                  <Input
+                    id="application-phone"
+                    type="tel"
+                    required
+                    value={form.phone}
+                    onChange={(e) => setForm((prev) => ({ ...prev, phone: e.target.value }))}
+                    placeholder={t.finalCta.form.phonePlaceholder}
+                    className="h-12 bg-white/95 border-white/20 text-foreground placeholder:text-muted-foreground"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="application-email" className="text-sm text-white/80">
+                  {t.finalCta.form.emailLabel}
+                </label>
+                <Input
+                  id="application-email"
+                  type="email"
+                  required
+                  value={form.email}
+                  onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
+                  placeholder={t.finalCta.form.emailPlaceholder}
+                  className="h-12 bg-white/95 border-white/20 text-foreground placeholder:text-muted-foreground"
+                />
+              </div>
+
+              <Button
+                type="submit"
+                disabled={status === "submitting"}
+                className="w-full md:w-auto px-10 py-5 h-auto bg-primary text-primary-foreground rounded-full hover:opacity-90 transition-all shadow-lg text-lg font-medium tracking-wide"
+              >
+                {status === "submitting" ? t.finalCta.form.submitting : t.finalCta.button}
+              </Button>
+
+              {message ? (
+                <p
+                  className={`text-sm ${
+                    status === "success" ? "text-emerald-200" : "text-red-200"
+                  }`}
+                >
+                  {message}
+                </p>
+              ) : null}
+            </form>
+
+            <p className="text-sm md:text-base font-light text-white/60 max-w-2xl mx-auto">
               {t.finalCta.note}
             </p>
           </div>

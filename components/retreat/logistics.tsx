@@ -73,6 +73,9 @@ export function Logistics() {
           </div>
 
           {/* Price blocks */}
+          <p className="font-serif text-xl md:text-2xl leading-relaxed text-foreground mb-6 whitespace-pre-line">
+            {t.logistics.pricingLead}
+          </p>
           <h3 className="font-serif text-2xl font-medium tracking-tight mb-6 text-foreground">{t.logistics.pricingTitle}</h3>
           <div className="space-y-6">
             <div className="flex justify-between items-center p-6 bg-background border border-border rounded-sm">
@@ -102,11 +105,12 @@ export function Logistics() {
               {t.logistics.priceNote}
             </p>
 
-            <div className="pt-4 space-y-2 text-sm font-light text-muted-foreground">
-              <p>
-                <strong className="font-medium">{t.logistics.deposit}</strong>
+            <div className="pt-4 space-y-4 text-base md:text-lg font-light text-muted-foreground leading-relaxed">
+              <p className="font-serif text-xl text-foreground">
+                {t.logistics.pricePositioning}
               </p>
-              <p>{t.logistics.installment}</p>
+              <p className="text-foreground">{t.logistics.deposit}</p>
+              <p className="text-foreground whitespace-pre-line">{t.logistics.installment}</p>
             </div>
           </div>
         </div>
@@ -114,16 +118,13 @@ export function Logistics() {
 
       {/* CTA after pricing */}
       <div className="mt-12 text-center space-y-4 reveal-on-scroll reveal-delay-200">
-        <p className="text-lg font-serif font-medium text-foreground">{t.logistics.spots}</p>
+        <p className="text-xl md:text-2xl font-serif font-medium text-foreground">{t.logistics.spots}</p>
         <a
           href="#application"
           className="inline-flex items-center gap-2 px-10 py-4 bg-primary text-primary-foreground rounded-full hover:opacity-90 transition-all duration-300 shadow-lg text-lg font-medium tracking-wide"
         >
           {t.logistics.cta}
         </a>
-        <p className="text-sm font-light text-muted-foreground">
-          {t.logistics.ctaNote}
-        </p>
       </div>
 
       {/* B2B */}
