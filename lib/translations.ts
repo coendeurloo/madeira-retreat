@@ -34,6 +34,21 @@ export const translations = {
         { title: "Выезд к океану", description: "Маяк Ponta do Pargo и работа на природе." },
       ],
     },
+    villa: {
+      badge: "Вилла для ретрита",
+      title: "Пространство, где можно замедлиться и выдохнуть",
+      intro:
+        "Мы живем на приватной вилле с океанским горизонтом, садом и несколькими зонами отдыха — без суеты и лишнего шума.",
+      highlights: [
+        "Панорамный вид на Атлантику из сада и зоны бассейна.",
+        "Бассейн и джакузи на территории — для отдыха после практик.",
+        "Тихий район с минимальным трафиком и камерной атмосферой.",
+        "Около 10 минут на машине до центра Фуншала.",
+        "Рядом есть пекарня, кафе, супермаркеты и Forum Madeira.",
+      ],
+      viewAll: "Смотреть все фото виллы",
+      photoCounterLabel: "Фото",
+    },
     program: {
       title: "Программа ретрита",
       days: [
@@ -135,6 +150,21 @@ export const translations = {
         { title: "Professional Photography", description: "Memories for the heart and ready-made content." },
         { title: "Ocean Excursion", description: "Ponta do Pargo lighthouse and working in nature." },
       ],
+    },
+    villa: {
+      badge: "Retreat Villa",
+      title: "A Place to Slow Down and Breathe",
+      intro:
+        "We stay in a private villa with open Atlantic views, a garden, and multiple rest areas — calm, quiet, and away from daily noise.",
+      highlights: [
+        "Panoramic Atlantic views from the garden and pool area.",
+        "Private pool and jacuzzi to unwind after daily practices.",
+        "Quiet neighborhood with very little traffic.",
+        "About 10 minutes by car to central Funchal.",
+        "Bakery, cafes, supermarkets, and Forum Madeira nearby.",
+      ],
+      viewAll: "View all villa photos",
+      photoCounterLabel: "Photo",
     },
     program: {
       title: "Retreat Program",

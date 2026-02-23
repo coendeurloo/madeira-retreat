@@ -9,6 +9,7 @@ import { PainPoints } from "@/components/retreat/pain-points"
 import { ConceptQuote } from "@/components/retreat/concept-quote"
 import { Features } from "@/components/retreat/features"
 import { Gallery } from "@/components/retreat/gallery"
+import { VillaShowcase } from "@/components/retreat/villa-showcase"
 import { Program } from "@/components/retreat/program"
 import { Logistics } from "@/components/retreat/logistics"
 import { Hosts } from "@/components/retreat/hosts"
@@ -59,6 +60,7 @@ export default function Page() {
         <ConceptQuote />
         <Features />
         <Gallery />
+        <VillaShowcase />
         <Program />
         <Logistics />
         <Hosts />
