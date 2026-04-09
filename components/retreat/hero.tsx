@@ -32,11 +32,14 @@ export function Hero() {
           {t.hero.title}
         </h1>
 
-        <p className="text-xl md:text-2xl font-light max-w-2xl mx-auto leading-relaxed drop-shadow-md text-white/90 reveal-on-scroll reveal-delay-200">
-          {t.hero.subtitle}
-          <br />
-          {t.hero.subtitleLine2}
-        </p>
+        <div className="max-w-4xl mx-auto reveal-on-scroll reveal-delay-200">
+          <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed drop-shadow-md text-white/90 text-balance">
+            {t.hero.subtitle}
+          </p>
+          <p className="mt-5 text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed drop-shadow-md text-white/80 whitespace-pre-line text-balance">
+            {t.hero.subtitleLine2}
+          </p>
+        </div>
 
         <div className="mt-12 flex flex-col items-center reveal-on-scroll reveal-delay-300">
           <a

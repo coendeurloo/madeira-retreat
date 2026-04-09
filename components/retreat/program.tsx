@@ -93,7 +93,7 @@ export function Program() {
               >
                 {day.title}
               </h3>
-              <p className="text-lg font-light text-muted-foreground leading-relaxed">
+              <p className="text-lg font-light text-muted-foreground leading-relaxed whitespace-pre-line">
                 {day.description}
               </p>
             </div>

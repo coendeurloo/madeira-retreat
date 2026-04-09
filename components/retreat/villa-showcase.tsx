@@ -165,17 +165,19 @@ export function VillaShowcase() {
             ))}
             <p className="text-foreground font-medium">{t.villa.capacityLine}</p>
           </div>
-          <ul className="space-y-3 pt-1">
-            {t.villa.highlights.map((item, i) => (
-              <li
-                key={i}
-                className="text-sm md:text-base text-muted-foreground leading-relaxed reveal-on-scroll"
-              >
-                <span className="text-primary pr-2">•</span>
-                {item}
-              </li>
-            ))}
-          </ul>
+          {t.villa.highlights.length > 0 ? (
+            <ul className="space-y-3 pt-1">
+              {t.villa.highlights.map((item, i) => (
+                <li
+                  key={i}
+                  className="text-sm md:text-base text-muted-foreground leading-relaxed reveal-on-scroll"
+                >
+                  <span className="text-primary pr-2">•</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          ) : null}
           <p className="font-serif text-lg md:text-xl text-foreground pt-2">
             {t.villa.closing}
           </p>

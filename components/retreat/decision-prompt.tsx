@@ -31,7 +31,7 @@ export function DecisionPrompt() {
         </ul>
 
         <div className="mt-10 text-center pt-8">
-          <p className="text-xl md:text-2xl font-serif font-medium text-foreground italic mb-8">
+          <p className="text-xl md:text-2xl font-serif font-medium text-foreground italic mb-8 whitespace-pre-line text-balance">
             {t.decisionPrompt.closing}
           </p>
         </div>

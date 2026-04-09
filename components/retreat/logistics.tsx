@@ -99,7 +99,9 @@ export function Logistics() {
                   <li key={i}>{"- "}{item}</li>
                 ))}
               </ul>
-              <p className="mt-4 text-sm font-light text-muted-foreground italic">{t.logistics.priceNote}</p>
+              {t.logistics.priceNote ? (
+                <p className="mt-4 text-sm font-light text-muted-foreground italic">{t.logistics.priceNote}</p>
+              ) : null}
               <p className="mt-4 font-serif text-xl text-foreground">{t.logistics.pricePositioning}</p>
             </div>
 
