@@ -51,43 +51,56 @@ export function Logistics() {
           </p>
           <h3 className="font-serif text-2xl font-medium tracking-tight mb-6 text-foreground">{t.logistics.pricingTitle}</h3>
           <div className="space-y-4">
-            <div className="flex justify-between items-center p-6 bg-muted/35 border border-border rounded-sm opacity-70">
-              <div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-1 block">
-                  {t.logistics.earlyBird.label}
-                </span>
-                {t.logistics.earlyBird.spots ? (
-                  <span className="text-sm text-muted-foreground">
-                    {t.logistics.earlyBird.spots}
+            {t.logistics.earlyBird.label || t.logistics.earlyBird.price ? (
+              <div className="flex justify-between items-center p-6 bg-muted/35 border border-border rounded-sm opacity-70">
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-1 block">
+                    {t.logistics.earlyBird.label}
                   </span>
+                  {t.logistics.earlyBird.spots ? (
+                    <span className="text-sm text-muted-foreground">
+                      {t.logistics.earlyBird.spots}
+                    </span>
+                  ) : null}
+                </div>
+                {t.logistics.earlyBird.price ? (
+                  <div className="font-serif text-3xl font-medium tracking-tight text-foreground">
+                    {t.logistics.earlyBird.price}
+                  </div>
                 ) : null}
               </div>
-              {t.logistics.earlyBird.price ? (
-                <div className="font-serif text-3xl font-medium tracking-tight text-foreground">
-                  {t.logistics.earlyBird.price}
+            ) : null}
+
+            <div className="p-6 md:p-7 bg-[hsl(25_70%_97%)] border-2 border-primary/45 rounded-sm shadow-sm">
+              <div className="flex items-center justify-between gap-4">
+                <div className="text-lg font-medium text-foreground">
+                  {t.logistics.current.label}
                 </div>
+                <div className="font-serif text-3xl md:text-4xl font-medium tracking-tight text-foreground">
+                  {t.logistics.current.price}
+                </div>
+              </div>
+              {t.logistics.current.note ? (
+                <p className="mt-2 text-sm md:text-base text-foreground/80">
+                  {t.logistics.current.note}
+                </p>
               ) : null}
             </div>
 
-            <div className="p-6 md:p-7 bg-[hsl(25_70%_97%)] border-2 border-primary/45 rounded-sm shadow-sm">
-              <div className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
-                {t.logistics.current.label}
+            {t.logistics.regular.label || t.logistics.regular.price ? (
+              <div className="flex justify-between items-center px-6 py-5 bg-background border border-border/70 rounded-sm">
+                <span className="text-lg font-medium text-muted-foreground">{t.logistics.regular.label}</span>
+                <div className="font-serif text-3xl text-foreground/85">{t.logistics.regular.price}</div>
               </div>
-              <div className="font-serif text-4xl md:text-5xl font-medium tracking-tight text-foreground">
-                {t.logistics.current.price}
-              </div>
-              <p className="mt-2 text-sm md:text-base text-foreground/80">
-                {t.logistics.current.note}
-              </p>
-            </div>
-
-            <div className="flex justify-between items-center px-6 py-5 bg-background border border-border/70 rounded-sm">
-              <span className="text-lg font-medium text-muted-foreground">{t.logistics.regular.label}</span>
-              <div className="font-serif text-3xl text-foreground/85">{t.logistics.regular.price}</div>
-            </div>
+            ) : null}
           </div>
 
           <p className="mt-6 text-lg md:text-xl font-serif font-medium text-foreground">{t.logistics.spots}</p>
+
+          <div className="mt-6 inline-flex items-center gap-3 px-5 py-3 rounded-sm border border-primary/35 bg-[hsl(25_75%_96%)] text-foreground">
+            <Wallet className="w-5 h-5 text-primary shrink-0" />
+            <p className="text-lg md:text-xl font-medium whitespace-pre-line">{t.logistics.installment}</p>
+          </div>
 
           <div className="mt-8 pt-8 border-t border-border space-y-6">
             <div>
@@ -107,10 +120,6 @@ export function Logistics() {
 
             <div className="space-y-4 text-base md:text-lg font-light text-muted-foreground leading-relaxed">
               <p className="text-foreground">{t.logistics.deposit}</p>
-              <div className="inline-flex items-center gap-3 px-5 py-3 rounded-sm border border-primary/35 bg-[hsl(25_75%_96%)] text-foreground">
-                <Wallet className="w-5 h-5 text-primary shrink-0" />
-                <p className="text-lg md:text-xl font-medium whitespace-pre-line">{t.logistics.installment}</p>
-              </div>
             </div>
 
             <div>

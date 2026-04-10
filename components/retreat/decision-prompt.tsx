@@ -24,7 +24,7 @@ export function DecisionPrompt() {
         <ul className="space-y-4 text-base md:text-lg font-light text-muted-foreground leading-relaxed">
           {t.decisionPrompt.points.map((point, index) => (
             <li key={index} className="flex items-start gap-3">
-              <span className="text-primary mt-0.5">—</span>
+              <span className="text-primary mt-0.5">-</span>
               <span>{point}</span>
             </li>
           ))}

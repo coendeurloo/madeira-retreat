@@ -1,12 +1,12 @@
 export const translations = {
   ru: {
     hero: {
-      badge: "Ретрит на Мадейре \u2022 22\u201326 мая 2026",
+      badge: "Ретрит на Мадейре \u2022 22-26 мая 2026",
       title: "Путь к своей мечте",
       subtitle:
         "Мы не ищем мечту. Мы возвращаем вам состояние, из которого вы точно знаете, чего хотите.",
       subtitleLine2:
-        "Это состояние, когда вы перестаёте сомневаться в своих решениях\nи начинаете чувствовать, что двигаетесь туда, куда действительно хотите.",
+        "Вы уедете с инструментами, которые работают и после ретрита.",
       cta: "Оставить заявку",
       ctaNote: "Я свяжусь с тобой, чтобы обсудить участие.",
     },
@@ -31,10 +31,10 @@ export const translations = {
         "живёшь для других, а не для себя",
         "знаешь, что можешь больше, но не делаешь шаг из страха или сомнений",
       ],
-      closing: "Если есть хотя бы одно \u00ABда\u00BB \u2014 этот ретрит для тебя.",
+      closing: "Если есть хотя бы одно \u00ABда\u00BB - этот ретрит для тебя.",
     },
     concept: {
-      line1: "5 дней на Мадейре \u2014 время остановиться, услышать себя и сделать шаг к своей мечте.",
+      line1: "5 дней на Мадейре - время остановиться, услышать себя и сделать шаг к своей мечте.",
       line2: "Без спешки. Без чужих ожиданий. Без роли \u00ABнадо\u00BB.",
     },
     features: {
@@ -133,7 +133,7 @@ export const translations = {
     },
     logistics: {
       title: "Формат и условия",
-      dates: { label: "Даты", value: "22\u201326 мая 2026" },
+      dates: { label: "Даты", value: "22-26 мая 2026" },
       location: {
         label: "Место",
         value: "Мадейра, Португалия",
@@ -157,14 +157,13 @@ export const translations = {
       pricingLead:
         "Можно продолжать откладывать изменения,\nа можно выбрать точку, после которой всё начинает меняться.",
       pricingTitle: "Стоимость участия",
-      earlyBird: { label: "Early Bird - SOLD OUT", spots: "", price: "" },
-      current: { label: "Текущая цена", price: "1990 \u20AC", note: "для следующих 3 мест" },
-      regular: { label: "Последние места", price: "2100 \u20AC" },
+      earlyBird: { label: "", spots: "", price: "" },
+      current: { label: "до 30 апреля -", price: "1990 \u20AC", note: "" },
+      regular: { label: "С 1 мая:", price: "2100 \u20AC" },
       priceNote: "",
       pricePositioning: "Это инвестиция в ясность, решения\nи новое направление твоей жизни.",
       deposit: "Чтобы закрепить за собой место, достаточно внести депозит 500 \u20AC.",
-      installment:
-        "Чтобы тебе было комфортно принять это решение, есть возможность оплаты частями до 6 месяцев.",
+      installment: "Доступна оплата частями - до 6 месяцев.",
       b2b: "Для участия от компании (B2B) условия обсуждаются отдельно. Оставьте заявку - и я свяжусь с вами для уточнения деталей.",
       spots: "Осталось 3 места",
       cta: "Оставить заявку",
@@ -242,7 +241,7 @@ export const translations = {
   },
   en: {
     hero: {
-      badge: "Retreat in Madeira \u2022 May 22\u201326, 2026",
+      badge: "Retreat in Madeira \u2022 May 22-26, 2026",
       title: "The Path to Your Dream",
       subtitle: "5 days of deep inner transformation",
       subtitleLine2: "in a private group of 8 women.",
@@ -271,10 +270,10 @@ export const translations = {
         "you\u2019re living for others, not for yourself",
         "you know you\u2019re capable of more, but fear or doubt holds you back",
       ],
-      closing: "If even one of these resonates \u2014 this retreat is for you.",
+      closing: "If even one of these resonates - this retreat is for you.",
     },
     concept: {
-      line1: "5 days in Madeira \u2014 time to pause, hear yourself, and take a step toward your dream.",
+      line1: "5 days in Madeira - time to pause, hear yourself, and take a step toward your dream.",
       line2: "No rush. No outside expectations. No \u201Cshould\u201D.",
     },
     features: {
@@ -330,9 +329,9 @@ export const translations = {
     },
     logistics: {
       title: "Format & Conditions",
-      dates: { label: "Dates", value: "May 22\u201326, 2026" },
+      dates: { label: "Dates", value: "May 22-26, 2026" },
       location: { label: "Location", value: "Madeira, Portugal.", value2: "Accommodation in a villa with ocean views." },
-      group: { label: "Group", value: "Up to 8 participants \u2014 an intimate and safe space." },
+      group: { label: "Group", value: "Up to 8 participants - an intimate and safe space." },
       included: {
         title: "Included in the price",
         items: [
@@ -350,13 +349,13 @@ export const translations = {
       pricingLead:
         "You can keep waiting.\nOr choose the moment that changes your direction.",
       pricingTitle: "Participation Cost",
-      earlyBird: { label: "Early Bird - SOLD OUT", spots: "", price: "" },
-      current: { label: "Current price", price: "\u20AC1,990", note: "for the next 3 spots" },
-      regular: { label: "Regular price", price: "\u20AC2,100" },
+      earlyBird: { label: "", spots: "", price: "" },
+      current: { label: "until April 30 -", price: "\u20AC1,990", note: "" },
+      regular: { label: "From May 1:", price: "\u20AC2,100" },
       priceNote: "The price includes 4 nights accommodation, meals, the full retreat program, and professional photography.",
       pricePositioning: "This is an investment in a turning point.",
       deposit: "Booking - €500 deposit.",
-      installment: "Installment payment is available up to 6 months.",
+      installment: "Installments are available - up to 6 months.",
       b2b: "For company-sponsored participation (B2B), terms are discussed separately. Submit an application and I\u2019ll contact you for details.",
       spots: "Only 8 spots. Intimate format.",
       cta: "Submit Application",

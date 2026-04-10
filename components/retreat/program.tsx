@@ -108,7 +108,7 @@ export function Program() {
         <ul className="space-y-3 text-base md:text-lg font-light text-muted-foreground leading-relaxed">
           {t.program.additions.map((item, index) => (
             <li key={index}>
-              <span className="text-primary mr-2">—</span>
+              <span className="text-primary mr-2">-</span>
               {item}
             </li>
           ))}
