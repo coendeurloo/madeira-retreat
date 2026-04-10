@@ -35,6 +35,20 @@ export function DecisionPrompt() {
             {t.decisionPrompt.closing}
           </p>
         </div>
+
+        <div className="mt-10 pt-8 border-t border-border/70">
+          <p className="text-base md:text-lg font-medium text-foreground mb-5">
+            {t.decisionPrompt.notForTitle}
+          </p>
+          <ul className="space-y-3 text-sm md:text-base font-light text-muted-foreground leading-relaxed">
+            {t.decisionPrompt.notForPoints.map((point, index) => (
+              <li key={index} className="flex items-start gap-3">
+                <span className="text-primary mt-0.5">-</span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       <div className="mt-10 text-center reveal-on-scroll reveal-delay-200">
@@ -43,6 +57,14 @@ export function DecisionPrompt() {
           {t.decisionPrompt.transition}
         </p>
         <div className="w-px h-14 bg-primary/35 mx-auto" />
+        <div className="mt-8">
+          <a
+            href="#pricing"
+            className="inline-flex items-center gap-2 px-8 py-3 border border-border bg-card text-foreground rounded-full hover:bg-muted/40 transition-colors duration-300 text-base md:text-lg"
+          >
+            {t.decisionPrompt.pricingCta}
+          </a>
+        </div>
       </div>
     </section>
   )

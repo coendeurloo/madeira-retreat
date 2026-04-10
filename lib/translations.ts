@@ -3,6 +3,7 @@ export const translations = {
     hero: {
       badge: "Ретрит на Мадейре \u2022 22-26 мая 2026",
       title: "Путь к своей мечте",
+      spots: "Осталось 3 места из 8",
       subtitle:
         "Мы не ищем мечту. Мы возвращаем вам состояние, из которого вы точно знаете, чего хотите.",
       subtitleLine2:
@@ -20,8 +21,15 @@ export const translations = {
         "внешне всё нормально, но внутри нет удовлетворения - ты хочешь большего, но не понимаешь - чего именно",
       ],
       closing: "Это не про отсутствие целей.\nЭто про отсутствие понимания себя.",
+      notForTitle: "Этот ретрит не подойдёт, если:",
+      notForPoints: [
+        "нужен просто отдых",
+        "нет готовности работать с собой",
+        "есть ожидание «быстрых изменений без действий»",
+      ],
       transition:
         "5 дней, чтобы выйти из внутреннего тупика и наконец понять, куда двигаться дальше.\n\nБез давления.\nБез «как правильно».\nС опорой на себя, а не на чужие ожидания.",
+      pricingCta: "Условия участия",
     },
     pain: {
       title: "Ты чувствуешь, что:",
@@ -162,8 +170,8 @@ export const translations = {
       regular: { label: "С 1 мая:", price: "2100 \u20AC" },
       priceNote: "",
       pricePositioning: "Это инвестиция в ясность, решения\nи новое направление твоей жизни.",
-      deposit: "Чтобы закрепить за собой место, достаточно внести депозит 500 \u20AC.",
-      installment: "Доступна оплата частями - до 6 месяцев.",
+      deposit: "Чтобы закрепить за собой одно из последних мест, достаточно внести депозит 350 \u20AC.",
+      installment: "Доступна оплата частями - до 6 месяцев (от 270 \u20AC в месяц).",
       b2b: "Для участия от компании (B2B) условия обсуждаются отдельно. Оставьте заявку - и я свяжусь с вами для уточнения деталей.",
       spots: "Осталось 3 места",
       cta: "Оставить заявку",
@@ -221,7 +229,7 @@ export const translations = {
       title: "Ты можешь продолжать сомневаться",
       titleLine2: "или сделать шаг к ясности и себе",
       button: "Оставить заявку",
-      note: "Я лично свяжусь с тобой, чтобы обсудить формат участия и понять, подойдёт ли тебе этот ретрит.",
+      note: "После заявки я свяжусь с вами лично, чтобы обсудить формат участия и ответить на вопросы.",
       form: {
         nameLabel: "Имя",
         namePlaceholder: "Как к вам обращаться",
@@ -243,6 +251,7 @@ export const translations = {
     hero: {
       badge: "Retreat in Madeira \u2022 May 22-26, 2026",
       title: "The Path to Your Dream",
+      spots: "3 of 8 spots remaining",
       subtitle: "5 days of deep inner transformation",
       subtitleLine2: "in a private group of 8 women.",
       cta: "Submit Application",
@@ -259,8 +268,15 @@ export const translations = {
         "you have a goal, but don’t know where to start",
       ],
       closing: "If even one of these is a “yes” - this retreat is for you.",
+      notForTitle: "This retreat is not for you if:",
+      notForPoints: [
+        "you only want rest",
+        "you are not ready to work with yourself",
+        "you expect quick changes without action",
+      ],
       transition:
         "5 days in Madeira -\ntime to pause, hear yourself, and take a step toward your dream\nwithout outside expectations, without the role of “should”,\nwithout looking back at what others might think.",
+      pricingCta: "Participation Terms",
     },
     pain: {
       title: "You feel like:",
@@ -354,8 +370,8 @@ export const translations = {
       regular: { label: "From May 1:", price: "\u20AC2,100" },
       priceNote: "The price includes 4 nights accommodation, meals, the full retreat program, and professional photography.",
       pricePositioning: "This is an investment in a turning point.",
-      deposit: "Booking - €500 deposit.",
-      installment: "Installments are available - up to 6 months.",
+      deposit: "To reserve one of the last spots, a €350 deposit is enough.",
+      installment: "Installments are available - up to 6 months (from €270/month).",
       b2b: "For company-sponsored participation (B2B), terms are discussed separately. Submit an application and I\u2019ll contact you for details.",
       spots: "Only 8 spots. Intimate format.",
       cta: "Submit Application",
@@ -413,7 +429,7 @@ export const translations = {
       title: "A dream doesn\u2019t come on its own.",
       titleLine2: "But you can take a step toward it.",
       button: "Submit Application",
-      note: "I’ll personally contact you to discuss the participation format and answer your questions.",
+      note: "After you apply, I will contact you personally to discuss the participation format and answer your questions.",
       form: {
         nameLabel: "Name",
         namePlaceholder: "Your name",

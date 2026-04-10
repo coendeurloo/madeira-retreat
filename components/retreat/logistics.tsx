@@ -7,7 +7,7 @@ export function Logistics() {
   const { t } = useLanguage()
 
   return (
-    <section className="container mx-auto px-6 max-w-5xl">
+    <section id="pricing" className="container mx-auto px-6 max-w-5xl">
       <div className="mb-12 text-center reveal-on-scroll">
         <h2 className="font-serif text-4xl font-medium tracking-tight mb-4">
           {t.logistics.title}
