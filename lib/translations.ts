@@ -24,8 +24,8 @@ export const translations = {
       notForTitle: "Этот ретрит не подойдёт, если:",
       notForPoints: [
         "нужен просто отдых",
-        "нет готовности работать с собой",
-        "есть ожидание «быстрых изменений без действий»",
+        "нет готовности быть честной с собой",
+        "хочется быстрых изменений без действий",
       ],
       transition:
         "5 дней, чтобы выйти из внутреннего тупика и наконец понять, куда двигаться дальше.\n\nБез давления.\nБез «как правильно».\nС опорой на себя, а не на чужие ожидания.",
@@ -271,8 +271,8 @@ export const translations = {
       notForTitle: "This retreat is not for you if:",
       notForPoints: [
         "you only want rest",
-        "you are not ready to work with yourself",
-        "you expect quick changes without action",
+        "you are not ready to be honest with yourself",
+        "you want quick changes without action",
       ],
       transition:
         "5 days in Madeira -\ntime to pause, hear yourself, and take a step toward your dream\nwithout outside expectations, without the role of “should”,\nwithout looking back at what others might think.",

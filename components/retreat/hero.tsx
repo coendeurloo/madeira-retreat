@@ -32,10 +32,6 @@ export function Hero() {
           {t.hero.title}
         </h1>
 
-        <p className="mb-5 text-sm md:text-base font-light tracking-wide text-white/75 reveal-on-scroll reveal-delay-150">
-          {t.hero.spots}
-        </p>
-
         <div className="max-w-4xl mx-auto reveal-on-scroll reveal-delay-200">
           <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed drop-shadow-md text-white/90 text-balance">
             {t.hero.subtitle}
