@@ -1,8 +1,9 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight, X } from "lucide-react"
+import { createPortal } from "react-dom"
 
 import { useLanguage } from "@/lib/language-context"
 
@@ -26,6 +27,17 @@ export function VillaShowcase() {
   const [index, setIndex] = useState<number | null>(null)
   const next = (delta: number) =>
     setIndex((current) => current === null ? 0 : (current + delta + photos.length) % photos.length)
+
+  useEffect(() => {
+    if (index === null) return
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIndex(null)
+    }
+
+    window.addEventListener("keydown", closeOnEscape)
+    return () => window.removeEventListener("keydown", closeOnEscape)
+  }, [index])
 
   return (
     <section className="mx-auto max-w-7xl px-6">
@@ -68,22 +80,37 @@ export function VillaShowcase() {
         </div>
       </div>
 
-      {index !== null ? (
-        <div role="dialog" aria-modal="true" className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 p-4">
-          <button onClick={() => setIndex(null)} aria-label="Close" className="absolute right-5 top-5 text-white">
-            <X />
-          </button>
-          <button onClick={() => next(-1)} aria-label="Previous photo" className="absolute left-4 text-white">
-            <ChevronLeft size={36} />
-          </button>
-          <div className="relative h-[80vh] w-[90vw] max-w-6xl">
-            <Image src={photos[index]} alt={`${copy[3]} ${index + 1}`} fill sizes="90vw" className="object-contain" />
-          </div>
-          <button onClick={() => next(1)} aria-label="Next photo" className="absolute right-4 text-white">
-            <ChevronRight size={36} />
-          </button>
-        </div>
-      ) : null}
+      {index !== null && typeof document !== "undefined"
+        ? createPortal(
+            <div
+              role="dialog"
+              aria-modal="true"
+              aria-label={`${copy[3]} ${index + 1}`}
+              onClick={(event) => {
+                if (event.target === event.currentTarget) setIndex(null)
+              }}
+              className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 p-4"
+            >
+              <button
+                onClick={() => setIndex(null)}
+                aria-label="Close gallery"
+                className="absolute right-5 top-5 rounded-full border border-white/50 bg-black/50 p-3 text-white transition hover:bg-white/20"
+              >
+                <X size={24} />
+              </button>
+              <button onClick={() => next(-1)} aria-label="Previous photo" className="absolute left-4 text-white">
+                <ChevronLeft size={36} />
+              </button>
+              <div className="relative h-[80vh] w-[90vw] max-w-6xl">
+                <Image src={photos[index]} alt={`${copy[3]} ${index + 1}`} fill sizes="90vw" className="object-contain" />
+              </div>
+              <button onClick={() => next(1)} aria-label="Next photo" className="absolute right-4 text-white">
+                <ChevronRight size={36} />
+              </button>
+            </div>,
+            document.body,
+          )
+        : null}
     </section>
   )
 }
