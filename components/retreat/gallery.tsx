@@ -24,7 +24,7 @@ export function Gallery() {
 
   return (
     <section className="mx-auto max-w-7xl px-6">
-      <h2 className="mb-12 text-center font-serif text-4xl font-medium md:text-5xl">{title}</h2>
+      <h2 className="mb-8 text-center font-serif text-3xl font-medium md:mb-12 md:text-5xl">{title}</h2>
       <div className="grid grid-cols-2 gap-3 md:grid-cols-12 md:gap-5">
         {captions.map((caption, index) => {
           const layout = index === 0

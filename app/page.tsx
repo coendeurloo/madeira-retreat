@@ -54,7 +54,7 @@ export default function Page() {
       <StickyHeader />
       <LanguageSwitcher />
       <Hero />
-      <main className="relative z-20 bg-background py-20 space-y-28 md:space-y-36">
+      <main className="relative z-20 space-y-20 bg-background py-14 md:space-y-36 md:py-20">
         <Features />
         <ConceptQuote />
         <Gallery />
