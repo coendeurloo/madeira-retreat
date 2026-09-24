@@ -1,30 +1,12 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useLanguage } from "@/lib/language-context"
+import { whatsappHref } from "@/lib/retreat-config"
 
-export function StickyCTA() {
+export function StickyHeader() {
   const { t } = useLanguage()
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsVisible(window.scrollY > window.innerHeight * 0.8)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  if (!isVisible) return null
-
-  return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-background/95 backdrop-blur-sm border-t border-border md:hidden">
-      <a
-        href="#application"
-        className="block w-full text-center py-4 bg-primary text-primary-foreground rounded-full font-medium text-base tracking-wide shadow-lg"
-      >
-        {t.hero.cta}
-      </a>
-    </div>
-  )
+  const [scrolled, setScrolled] = useState(false)
+  useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 40); onScroll(); window.addEventListener("scroll", onScroll, { passive: true }); return () => window.removeEventListener("scroll", onScroll) }, [])
+  return <header className={`fixed inset-x-0 top-0 z-50 transition-colors ${scrolled ? "border-b border-border bg-background/95 text-foreground backdrop-blur" : "text-white"}`}><div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6"><span className="font-serif text-xl font-medium tracking-tight">БЕЗ МАСОК</span><a href={whatsappHref()} className={`rounded-full px-4 py-2 text-sm font-medium transition ${scrolled ? "bg-primary text-white" : "bg-white text-foreground"}`}>{t.nav}</a></div></header>
 }

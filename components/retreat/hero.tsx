@@ -1,60 +1,29 @@
 "use client"
 
 import Image from "next/image"
-import { ArrowRight } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
+import { isEarlyPriceActive, retreatConfig } from "@/lib/retreat-config"
 
 export function Hero() {
   const { t } = useLanguage()
+  const copy = t.hero as unknown as string[]
+  const early = isEarlyPriceActive()
 
   return (
-    <header className="relative w-full h-screen min-h-[600px] overflow-hidden flex items-center justify-center">
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero-madeira.jpg"
-          alt="Madeira coastline"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-foreground/40 backdrop-blur-[2px]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-      </div>
-
-      <div className="relative z-10 container mx-auto px-6 text-center text-white mt-10">
-        <div className="inline-flex flex-col items-center mb-6 reveal-on-scroll">
-          <span className="text-sm md:text-base tracking-widest uppercase font-medium mb-4 text-white/80 border-b border-white/30 pb-2">
-            {t.hero.badge}
-          </span>
+    <header className="relative flex min-h-[680px] h-[100svh] items-center justify-center overflow-hidden">
+      <Image src="/images/hero-madeira.jpg" alt="Madeira coastline" fill priority sizes="100vw" className="object-cover object-[58%_center] sm:object-center" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-black/20" />
+      <div className="relative z-10 mx-auto max-w-4xl px-6 pt-24 text-center text-white">
+        <p className="mb-7 text-xs font-medium tracking-[.22em] uppercase text-white/85">{copy[0]}</p>
+        <h1 className="font-serif text-6xl font-medium tracking-tight sm:text-7xl md:text-8xl">{copy[1]}</h1>
+        <p className="mx-auto mt-7 max-w-2xl text-2xl font-light leading-relaxed sm:text-3xl">{copy[2]}</p>
+        <p className="mt-5 whitespace-pre-line text-base font-light leading-relaxed text-white/90 sm:text-lg">{copy[3]}</p>
+        <div className="mt-9 space-y-1 text-sm font-medium tracking-wide sm:text-base">
+          <p>{copy[4]}</p>
+          {early ? <p>{retreatConfig.earlyPrice.toLocaleString("ru-RU")} € · до 30 сентября включительно</p> : null}
+          <p>{early ? "С 1 октября — " : ""}{retreatConfig.regularPrice.toLocaleString("ru-RU")} €</p>
         </div>
-
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight mb-6 drop-shadow-lg text-balance reveal-on-scroll reveal-delay-100">
-          {t.hero.title}
-        </h1>
-
-        <div className="max-w-4xl mx-auto reveal-on-scroll reveal-delay-200">
-          <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed drop-shadow-md text-white/90 text-balance">
-            {t.hero.subtitle}
-          </p>
-          <p className="mt-5 text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed drop-shadow-md text-white/80 whitespace-pre-line text-balance">
-            {t.hero.subtitleLine2}
-          </p>
-        </div>
-
-        <div className="mt-12 flex flex-col items-center reveal-on-scroll reveal-delay-300">
-          <a
-            href="#application"
-            className="group inline-flex items-center gap-3 px-10 py-4 bg-white text-foreground rounded-full hover:bg-white/90 transition-all duration-300 shadow-lg"
-          >
-            <span className="text-lg font-medium tracking-tight">
-              {t.hero.cta}
-            </span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
-          <p className="mt-4 text-sm font-light text-white/70">
-            {t.hero.ctaNote}
-          </p>
-        </div>
+        <a href="#what-awaits" className="mt-10 inline-flex rounded-full bg-white px-7 py-4 text-base font-medium text-foreground transition hover:bg-white/90">{copy[5]}</a>
       </div>
     </header>
   )

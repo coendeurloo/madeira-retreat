@@ -17,9 +17,17 @@ const lora = Lora({
 })
 
 export const metadata: Metadata = {
-  title: "Ретрит на Мадейре | Путь к своей мечте",
+  metadataBase: new URL("https://madeira-retreat.vercel.app"),
+  title: "Без масок — ретрит на Мадейре, 5–10 ноября 2026",
   description:
-    "Трансформационный 5-дневный ретрит для женщин на Мадейре. 22-26 мая 2026. Глубокая внутренняя перезагрузка в закрытой группе из 8 женщин.",
+    "Камерный женский ретрит на Мадейре: океан, приватная вилла, работа с собой и профессиональная съёмка.",
+  openGraph: {
+    title: "Без масок — Madeira 2026",
+    description: "Пять дней, в которых тебе не нужно быть ни для кого.",
+    images: ["/images/hero-madeira.jpg"],
+    locale: "ru_RU",
+    type: "website",
+  },
 }
 
 export default function RootLayout({

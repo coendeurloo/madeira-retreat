@@ -1,35 +1,10 @@
+"use client"
+
 import Image from "next/image"
+import { useLanguage } from "@/lib/language-context"
 
-const images = [
-  { src: "/images/hero-madeira.jpg", alt: "Madeira coastline" },
-  { src: "/images/levada-walk.jpg", alt: "Levada forest trail" },
-  { src: "/images/ocean-cliffs.jpg", alt: "Ocean cliffs" },
-  { src: "/images/madeira-sunrise.jpg", alt: "Madeira sunrise" },
-]
-const revealDelays = ["", "reveal-delay-100", "reveal-delay-200", "reveal-delay-300"]
-
+const visuals = ["/images/retreat/atmosphere/madeira-exploration.png", "/images/retreat/atmosphere/exploring-madeira.jpg", "/images/retreat/atmosphere/conversation-circle.jpg", "/images/retreat/atmosphere/laughing-together.jpg", "/images/retreat/atmosphere/see-yourself-differently.jpg"]
 export function Gallery() {
-  return (
-    <section className="w-full bg-card py-12 border-y border-border">
-      <div className="container mx-auto px-6 max-w-7xl">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {images.map((img, i) => (
-            <div
-              key={i}
-              className={`relative group overflow-hidden h-64 md:h-80 rounded-sm reveal-on-scroll ${
-                revealDelays[i % revealDelays.length]
-              } ${i % 2 !== 0 ? "md:mt-12" : ""}`}
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
+  const { t } = useLanguage(); const [title, captions] = t.gallery as unknown as [string, string[], string]
+  return <section className="mx-auto max-w-7xl px-6"><h2 className="mb-12 text-center font-serif text-4xl font-medium md:text-5xl">{title}</h2><div className="grid grid-cols-2 gap-3 md:grid-cols-12 md:gap-5">{captions.map((caption, i) => <figure key={caption} className={`relative overflow-hidden bg-muted ${i === 4 ? "aspect-[3/4] md:col-span-4 md:col-start-5" : "min-h-64 md:min-h-80"} ${["md:col-span-5", "md:col-span-7 md:mt-16", "md:col-span-7", "md:col-span-5 md:-mt-8", ""][i]}`}><Image src={visuals[i]} alt={caption} fill sizes="(max-width: 768px) 50vw, 60vw" className={`object-cover ${i === 1 ? "object-[center_62%]" : i === 2 ? "object-[center_76%]" : i === 3 ? "object-[center_43%]" : ""}`} /><div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" /><figcaption className="absolute bottom-0 p-5 font-serif text-xl text-white md:p-7 md:text-2xl">{caption}</figcaption></figure>)}</div></section>
 }
