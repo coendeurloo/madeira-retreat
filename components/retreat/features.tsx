@@ -36,7 +36,7 @@ export function Features() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-7">
               <h3 className="text-sm font-semibold tracking-[.17em]">{title}</h3>
-              <p className="mt-3 max-w-md text-base font-light leading-relaxed text-white/90">{description}</p>
+              <p className={`mt-3 max-w-md font-light text-white/90 ${index === 2 ? "whitespace-pre-line text-base leading-relaxed lg:text-[15px] lg:leading-6" : "text-base leading-relaxed"}`}>{description}</p>
             </div>
           </article>
         ))}
