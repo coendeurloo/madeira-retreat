@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import { useLanguage } from "@/lib/language-context"
 import { isEarlyPriceActive, retreatConfig } from "@/lib/retreat-config"
 
@@ -11,7 +10,18 @@ export function Hero() {
 
   return (
     <header className="relative flex min-h-[680px] h-[100svh] items-center justify-center overflow-hidden">
-      <Image src="/images/hero-madeira.jpg" alt="Madeira coastline" fill priority sizes="100vw" className="object-cover object-[58%_center] sm:object-center" />
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster="/images/hero-madeira-poster.jpg"
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover object-[58%_center] sm:object-center"
+      >
+        <source src="/videos/hero-madeira.mp4?v=2" type="video/mp4" />
+      </video>
       <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-black/20" />
       <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-background via-background/60 to-transparent" />
       <div className="relative z-10 mx-auto max-w-4xl px-6 pt-24 text-center text-white">
